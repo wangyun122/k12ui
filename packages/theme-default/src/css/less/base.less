@@ -1,0 +1,778 @@
+/**
+ * @Author 阿辛
+ * @Description 全局使用的样式
+ */
+
+.clearfix:after {
+    display: block;
+    height: 0;
+    clear: both;
+    content: '\20';
+}
+
+.fl { float: left; }
+
+.fr { float: right; }
+
+.fz0 {
+    font-size: 0;
+    line-height: 0;
+}
+
+.tal { text-align: left; }
+
+.tac { text-align: center; }
+
+.tar { text-align: right; }
+
+.vat { vertical-align: top; }
+
+.mrla {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dropdown {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+
+    .p {
+        display: block;
+        //line-height: 30px;
+
+        i {
+            display: inline-block;
+            margin-left: 5px;
+            vertical-align: top;
+            font-size: @font-size-s;
+        }
+    }
+
+    .son {
+        position: absolute;
+        display: none;
+        min-width: 100%;
+    }
+
+    &.expand { z-index: 2; }
+
+    &:not(.icon-links-div) .p { line-height: 30px; }
+}
+
+i.icon-down-open:before {
+    transition-duration: .2s;
+
+    .expand & {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}
+
+a {
+    color: @color-normal-text;
+    text-decoration: none;
+    .trdu;
+}
+
+.trdu1 { .trdu(1s); }
+
+.mt5 { margin-top: 5px; }
+.mr5 { margin-right: 5px; }
+.mb5 { margin-bottom: 5px; }
+.ml5 { margin-left: 5px; }
+
+.mt10 { margin-top: 10px; }
+.mr10 { margin-right: 10px; }
+.mb10 { margin-bottom: 10px; }
+.ml10 { margin-left: 10px; }
+
+.mt15 { margin-top: 15px; }
+.mr15 { margin-right: 15px; }
+.mb15 { margin-bottom: 15px; }
+.ml15 { margin-left: 15px; }
+
+.mt20 { margin-top: 20px; }
+.mr20 { margin-right: 20px; }
+.mb20 { margin-bottom: 20px; }
+.ml20 { margin-left: 20px; }
+
+.pt5 { padding-top: 5px; }
+.pr5 { padding-right: 5px; }
+.pb5 { padding-bottom: 5px; }
+.pl5 { padding-left: 5px; }
+
+.pt10 { padding-top: 10px; }
+.pr10 { padding-right: 10px; }
+.pb10 { padding-bottom: 10px; }
+.pl10 { padding-left: 10px; }
+
+.pt15 { padding-top: 15px; }
+.pr15 { padding-right: 15px; }
+.pb15 { padding-bottom: 15px; }
+.pl15 { padding-left: 15px; }
+
+.pt20 { padding-top: 20px; }
+.pr20 { padding-right: 20px; }
+.pb20 { padding-bottom: 20px; }
+.pl20 { padding-left: 20px; }
+
+/* HTML 使用的颜色 class */
+.red { color: @red; }
+.green { color: @green; }
+.blue { color: @blue; }
+.darkblue { color: @darkblue; }
+.gray { color: @gray; }
+
+/* 按钮 */
+.btn, button {
+    display: inline-block;
+    text-align: center;
+    color: #fff !important;
+    text-decoration: none !important;
+    .trdu;
+    .br;
+}
+.br0 { .br(0); }
+
+// 按钮颜色
+.btn-border-darkblue { .btn-border-color(@darkblue); }
+.btn-darkblue { .btn-color(@darkblue); }
+.btn-green { .btn-color(@green); }
+.btn-blue { .btn-color(@blue); }
+.btn-gray { .btn-color(@gray); }
+.btn-yellow { .btn-color(@yellow); }
+
+// 按钮尺寸
+.btn-tiny {
+    .btn-size(22px, 10px, 22px, 12px);
+    &[class^="btn-border-"], &[class*=" btn-border-"] { line-height: 20px; }
+}
+.btn-small {
+    .btn-size;
+    &[class^="btn-border-"], &[class*=" btn-border-"] { line-height: 28px; }
+}
+.btn-middle {
+    .btn-size(40px, 40px, 40px, 16px);
+    &[class^="btn-border-"], &[class*=" btn-border-"] { line-height: 38px; }
+}
+.btn-big {
+    .btn-size(50px, 50px, 50px, 18px);
+    &[class^="btn-border-"], &[class*=" btn-border-"] { line-height: 48px; }
+}
+
+// 滑块按钮
+.btn-switcher {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 22px;
+    background: @green;
+    border-radius: 11px;
+    cursor: pointer;
+    .trdu;
+
+    &:before {
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        width: 20px;
+        height: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+        content: '';
+        .trdu;
+    }
+
+    &.off {
+        background: @gray;
+        &:before { right: 22px; }
+    }
+}
+
+// 等第色块
+.btn-level-a { //等第 A
+    &.btn-tiny { width: 50px; }
+    &.btn-small { width: 56px; }
+    padding: 0;
+    .br(0);
+    .btn-color(@color-level-a);
+}
+.btn-level-b { //等第 B
+    &.btn-tiny { width: 50px; }
+    &.btn-small { width: 56px; }
+    padding: 0;
+    .br(0);
+    .btn-color(@color-level-b);
+}
+.btn-level-c { //等第 C
+    &.btn-tiny { width: 50px; }
+    &.btn-small { width: 56px; }
+    padding: 0;
+    .br(0);
+    .btn-color(@color-level-c);
+}
+.btn-level-d { //等第 D
+    &.btn-tiny { width: 50px; }
+    &.btn-small { width: 56px; }
+    padding: 0;
+    .br(0);
+    .btn-color(@color-level-d);
+}
+.btn-level-z { //已结束、未完成等灰色
+    &.btn-tiny { width: 50px; }
+    &.btn-small { width: 56px; }
+    padding: 0;
+    .br(0);
+    .btn-color(@color-level-z);
+}
+.btn-level-red {
+    &.btn-tiny { width: 50px; }
+    &.btn-small { width: 56px; }
+    padding: 0;
+    .br(0);
+    .btn-color(@red);
+}
+.btn-level-green { //练习未开始样式颜色
+    &.btn-tiny { width: 50px; }
+    &.btn-small { width: 56px; }
+    padding: 0;
+    .br(0);
+    .btn-color(@color-level-green);
+}
+
+/* 考试的等级样式 */
+span[class^="btn-exam-level"], span[class*=" btn-exam-level"] {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    .br(2px);
+    border: 1px solid transparent;
+    line-height: 16px;
+    .tac;
+    .trdu;
+    &.ttfu {
+        color: #fff !important;
+        text-transform: uppercase;
+    }
+    &.btn-exam-level-a {
+        border-color: @color-level-a;
+        color: @color-level-a;
+        &:before { content: 'a'; }
+        &.ttfu { .btn-color(@color-level-a); }
+    }
+    &.btn-exam-level-b {
+        border-color: @color-level-b;
+        color: @color-level-b;
+        &:before { content: 'b'; }
+        &.ttfu { .btn-color(@color-level-b); }
+    }
+    &.btn-exam-level-c {
+        border-color: @color-level-c;
+        color: @color-level-c;
+        &:before { content: 'c'; }
+        &.ttfu { .btn-color(@color-level-c); }
+    }
+    &.btn-exam-level-d {
+        border-color: @color-level-d;
+        color: @color-level-d;
+        &:before { content: 'd'; }
+        &.ttfu { .btn-color(@color-level-d); }
+    }
+}
+
+/* 考试跟测验的圆圈样式 */
+.btn-exam-exam, .btn-exam-test {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    .br(35px);
+    &:before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: inline-block;
+        margin-left: -30px;
+        margin-top: -30px;
+        width: 60px;
+        height: 60px;
+        .br(30px);
+        content: '';
+    }
+    &:after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -15px;
+        margin-left: -20px;
+        font-size: @font-size-xxl;
+        white-space: nowrap;
+    }
+    &.btn-exam-exam {
+        .b1(#1CBDD7);
+        &:before { background: #1CBDD7; }
+        &:after {
+            content: '考试';
+            color: #fff;
+        }
+        &.optional:after { content: '考查'; }
+    }
+    &.btn-exam-test {
+        .b1(#E9DDAC);
+        &:before { background: #FFF4C8; }
+        &:after {
+            content: '测验';
+            color: #BB9817;
+        }
+    }
+}
+
+// 颜色附件图标
+.icon-word,
+.icon-excel,
+.icon-ppt,
+.icon-pdf,
+.icon-music-new,
+.icon-video,
+.icon-pic,
+.icon-flash {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #EBEBEB;
+    background: linear-gradient(#fafafa, #eee);
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    &:before {
+        position: relative;
+        margin: 0;
+    }
+}
+.icon-word {
+    &:before {
+        top: -1px;
+        color: #448BFF;
+    }
+}
+.icon-excel {
+    font-size: 10px;
+    &:before {
+        top: -2px;
+        color: #308a58;
+    }
+}
+.icon-ppt {
+    &:before {
+        top: -1px;
+        color: #E54919;
+    }
+}
+.icon-pdf {
+    &:before {
+        top: -1px;
+        color: #E93E13;
+    }
+}
+.icon-video {
+    &:before {
+        top: -1px;
+        left: 1px;
+        color: #3197A7;
+    }
+}
+.icon-music-new {
+    font-size: 10px;
+    &:before {
+        top: -1px;
+        color: #8127D0;
+    }
+}
+.icon-pic {
+    &:before {
+        left: -1px;
+        color: #F5A623;
+    }
+}
+.icon-flash {
+    &:before {
+        top: -1px;
+        color: #D63E3E;
+    }
+}
+
+// 体育项目图标
+[class^="icon-sports-"],
+[class*=" icon-sports-"] {
+    display: inline-block;
+
+    &:before {
+        margin: 0;
+        font-size: 150px;
+        color: #D0021B;
+    }
+}
+
+/* 脸部表情 */
+.face-icon-status {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 15px;
+    background: @light-gray;
+
+    &:before {
+        position: relative;
+        margin: 0;
+        color: #fff;
+    }
+
+    &.active {
+        background: #FDBA00;
+        background: linear-gradient(#F8CF5D, #FDBA00);
+    }
+
+    &.icon-well-done:before { left: -3px; }
+    &.icon-good:before { left: -2px; }
+    &.icon-weary:before { left: -1px; }
+    &.icon-hurt:before { left: -1px; }
+}
+
+a .face-icon-status:hover {
+    background: #FDBA00;
+    background: linear-gradient(#F8CF5D, #FDBA00);
+}
+
+.face-icon-progress {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    line-height: 16px;
+    text-align: center;
+    background: #FF5C90;
+    border: 1px solid #fff;
+    border-radius: 9px;
+
+    &:before {
+        position: relative;
+        margin: 0;
+        color: #fff;
+        font-size: 12px;
+        transform: scale(.666)
+    }
+
+    &.icon-well-done:before { left: -2px; }
+    &.icon-good:before { left: -1px; }
+    &.icon-hurt:before { left: -1px; }
+}
+
+/* highcharts */
+// 单个标题的空心饼图
+.pie-1 {
+    margin-top: 27px;
+}
+
+// 2行标题白色背景的空心饼图
+.pie-2-small-day {
+    margin-top: 16px;
+    font-size: 16px;
+
+    &.subtitle {
+        font-size: 24px;
+        color: #4a4a4a;
+    }
+}
+
+// 3行标题深色背景的空心饼图
+.pie-3-big {
+    margin-top: -10px;
+
+    span {
+        display: block;
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+// 3行标题白色背景的空心饼图
+.pie-3-small-day {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #4a4a4a;
+
+    &.subtitle {
+        margin-top: 5px;
+        font-size: 24px;
+
+        span {
+            display: block;
+            font-size: 14px;
+            text-align: center;
+        }
+    }
+}
+
+// 纵坐标文字竖写
+.yaxis-vertical-title {
+    width: 14px;
+    white-space: normal;
+    .wbba;
+}
+
+.no-vertical .yaxis-vertical-title {
+    width: auto;
+    white-space: nowrap;
+}
+
+// 图表底部 Legend
+.chart-column-legend {
+    padding-left: 8%;
+    text-align: center;
+    span {
+        position: relative;
+
+        &:before {
+            position: absolute;
+            top: 4px;
+            left: -19px;
+            width: 14px;
+            height: 12px;
+            content: '';
+        }
+
+        ~ span { margin-left: 30px; }
+
+        &.level-a:before { background: @color-level-a; }
+        &.level-b:before { background: @color-level-b; }
+        &.level-c:before { background: @color-level-c; }
+        &.level-d:before { background: @color-level-d; }
+        &.level-e:before { background: @color-level-e; }
+        &.level-f:before { background: @color-level-f; }
+    }
+}
+
+// 图表函数输出错误
+.chart-error {
+    position: relative;
+    div {
+        position: absolute;
+        top: 50%;
+        margin-top: -15px;
+        width: 100%;
+        height: 30px;
+        text-align: center;
+        color: @red;
+        font-size: 18px;
+    }
+}
+
+// 均分柱状图 plotLines 标签样式
+.plotline-label {
+    height: 20px;
+    padding: 0 5px;
+    color: #fff;
+    background: @green;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.chart-column-line-hack {
+    .highcharts-tooltip {
+        z-index: 1;
+        > span {
+            padding: 5px;
+            border: 1px solid #84B5EF;
+            border-radius: 2px;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.8) !important;
+
+            &:before, &:after {
+                position: absolute;
+                bottom: -7px;
+                left: 50%;
+                margin-left: -7px;
+                border-width: 7px 7px 0;
+                border-color: #84B5EF transparent;
+                border-style: solid;
+                content: '';
+            }
+
+            &:after {
+                bottom: -6px;
+                border-color: #fff transparent;
+            }
+        }
+    }
+    .chart-column-legend-class { padding-left: 0 !important; }
+}
+
+//图标部分的样式
+//班级类型切换
+.chart-column-line-global {
+    .parallel-change {
+        height: 45px;
+        line-height: 45px;
+        .tac;
+        background: #f9f9f9;
+        & > a {
+            margin-left: 40px;
+            text-decoration: none;
+            &.active { color: @red; }
+        }
+    }
+    //可选择
+    .can-choosed {
+        display: inline-block;
+        .mr20;
+        color: @dark;
+    }
+    .chart-column-legend-class > .can-choosed { .mr5; }
+
+    .chart-column-legend-class {
+        display: none;
+        padding-left: 8%;
+        .tac;
+        & > span {
+            display: inline-block;
+            .mr20;
+            color: @dark;
+            cursor: pointer;
+            white-space: nowrap;
+            &.active { color: @color-normal-text; }
+        }
+        &.active { display: block; }
+    }
+
+    .chart-column-legend {
+        & > span {
+            display: inline-block;
+            cursor: pointer;
+            white-space: nowrap;
+            &.active {
+                color: @dark;
+                &:before { background: @dark; }
+            }
+        }
+    }
+}
+
+
+//放大查看的公共样式
+.btb-chart {
+    .icon-close { display: none; }
+}
+
+.modal {
+    position: fixed;
+    background: rgba(0, 0, 0, .6);
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    & > div {
+        position: absolute;
+        top: 80px;
+        left: 50%;
+        margin-left: -500px;
+        width: 1000px;
+    }
+    .icon-close {
+        position: absolute;
+        display: inline-block;
+        right: -40px;
+        top: 0;
+        font-size: 0;
+        margin: 0;
+        color: #fff;
+        cursor: pointer;
+        &:before {
+            font-size: @font-size-xxl;
+            font-weight: @font-weight-bold;
+        }
+        &:hover {
+            color: @red;
+            .trdu();
+        }
+    }
+    //add overflow auto
+    overflow: auto;
+    .charts-btb { height: 600px !important; }
+    .graph-comments, .look-expend, .check { display: none !important; }
+}
+
+// simditor 发布的内容显示
+.simditor-content-style {
+    .wbba;
+    font-size: @font-size-l;
+    overflow: auto;
+
+    h1, h2, h3, h4, h5 {
+        margin: 0 0 1em 0;
+        font-weight: @font-weight-bold;
+    }
+
+    h1 { font-size: 24px; }
+    h2 { font-size: 22px; }
+    h3 { font-size: @font-size-xxl; }
+    h4 { font-size: @font-size-xl; }
+    h5 { font-size: @font-size-l; }
+    p { margin-bottom: 1em; }
+    b { font-weight: @font-weight-bold; }
+    i { font-style: italic; }
+    u { text-decoration: underline; }
+    strike { text-decoration: line-through; }
+
+    a {
+        color: @blue !important;
+        &:hover { text-decoration: underline; }
+    }
+
+    hr {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 1em 0;
+    }
+
+    ol {
+        padding-left: 40px;
+        margin-bottom: 1em;
+        list-style: decimal;
+    }
+
+    ul {
+        padding-left: 40px;
+        margin-bottom: 1em;
+        list-style: disc;
+    }
+
+    blockquote {
+        padding: 10px 15px;
+        border-left: 5px solid #ddd;
+        margin: 0 20px 1em;
+        background: #f8f8f8;
+        font-size: 14px;
+
+        :last-child { margin-bottom: 0; }
+    }
+
+    table {
+        thead { background: #f9f9f9; }
+
+        th, td {
+            padding: 4px 8px;
+            border: 1px solid #ccc;
+            vertical-align: top;
+            text-align: left;
+        }
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}

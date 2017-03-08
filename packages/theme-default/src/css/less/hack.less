@@ -1,0 +1,335 @@
+/* hack - web */
+/* datepicker */
+.ui-datepicker .ui-datepicker-prev-hover,
+.ui-datepicker .ui-datepicker-next-hover { top: 2px !important; }
+.ui-datepicker .ui-datepicker-prev-hover { left: 2px !important; }
+.ui-datepicker .ui-datepicker-next-hover { right: 2px !important; }
+.ui-widget-header { background: @red !important; }
+.ui-sortable > * { cursor: move; }
+
+/* dataTables */
+.datatables-wrap {
+    overflow: hidden;
+    table.dataTable { border-left: 1px solid @color-bb; border-bottom: 1px solid @color-bb; }
+    table.dataTable th { border-bottom-color: @color-bb; }
+    table.dataTable th,
+    table.dataTable td { padding: 10px; border-width: 1px 1px 0 0; }
+    .dataTables_scrollBody { border-bottom-color: @color-bb !important; }
+}
+
+/* ad-gallery */
+.ad-preloads { display: none; }
+.ad-gallery {
+    .ad-image-wrapper {
+        background: #f6f6f6;
+
+        .ad-loader {
+            top: 50% !important;
+            left: 50% !important;
+            border: 6px solid #fff !important;
+            margin: -20px 0 0 -20px;
+            border-radius: 6px;
+            opacity: .8;
+        }
+
+        .ad-image-description {
+            width: 100% !important;
+            background: rgba(255, 255, 255, .75) !important;
+        }
+
+        .ad-next,
+        .ad-prev {
+            background: transparent !important;
+        }
+
+        .ad-next-image,
+        .ad-prev-image {
+            top: 50% !important;
+            width: auto !important;
+            height: auto !important;
+            margin-top: -25px;
+            text-align: center;
+            background: transparent !important;
+            opacity: 1 !important;
+
+            &:before {
+                margin: 0;
+                color: #fff;
+                font-size: 50px;
+                text-shadow: 0 0 3px rgba(0, 0, 0, .8);
+            }
+        }
+
+        .ad-next-image {
+            right: 15px !important;
+            &:before {
+                &:extend(.icon-right-open:before, [class^="icon-"]:before);
+            }
+        }
+
+        .ad-prev-image {
+            left: 15px !important;
+            &:before {
+                &:extend(.icon-left-open:before, [class^="icon-"]:before);
+            }
+        }
+    }
+
+    .ad-controls { display: none; }
+
+    .ad-nav {
+        padding: 0 30px;
+
+        .ad-thumb-list {
+            li { padding-right: 10px; }
+            a {
+                position: relative;
+
+                &.ad-active:after {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    box-sizing: border-box;
+                    width: 100%;
+                    height: 100%;
+                    border: 5px solid #468EE5;
+                    content: '';
+                }
+
+                img {
+                    position: relative;
+                    width: 100px;
+                    height: 100px;
+                    border: 0 !important;
+                }
+            }
+        }
+
+        .ad-back, .ad-forward {
+            width: 30px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            opacity: 1 !important;
+            background: transparent;
+            color: #9B9B9B;
+
+            &:hover { color: @darkblue; }
+
+            &:before {
+                margin: 0;
+                font-size: 20px;
+            }
+        }
+
+        .ad-back {
+            left: 0;
+
+            &:before {
+                &:extend(.icon-left-open:before, [class^="icon-"]:before);
+            }
+        }
+
+        .ad-forward {
+            right: 0;
+
+            &:before {
+                &:extend(.icon-right-open:before, [class^="icon-"]:before);
+            }
+        }
+    }
+}
+
+/* Simditor */
+.simditor-hack {
+    textarea { display: none; }
+}
+
+.simditor-hack .simditor {
+    border-color: @color-input;
+
+    .simditor-wrapper {
+        .simditor-toolbar {
+            > ul {
+                > li {
+                    > .toolbar-item {
+                        &.toolbar-item-title span:before {
+                            position: relative;
+                            top: 2px;
+                        }
+                    }
+
+                    .toolbar-menu {
+                        box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+
+                        .menu-item { font-size: @font-size-m; }
+
+                        &:before {
+                            top: -2px;
+                            height: 2px;
+                        }
+
+                        &.toolbar-menu-title {
+                            font-weight: @font-weight-bold;
+                            .menu-item-normal {
+                                font-size: @font-size-l;
+                                font-weight: @font-weight-normal;
+                            }
+                            .menu-item-h1 { font-size: 24px; }
+                            .menu-item-h2 { font-size: 22px; }
+                            .menu-item-h3 { font-size: @font-size-xxl; }
+                            .menu-item-h4 { font-size: @font-size-xl; }
+                            .menu-item-h5 { font-size: @font-size-l; }
+                        }
+
+                        &.toolbar-menu-fontScale ul {
+                            min-width: 100px;
+                        }
+
+                        &.toolbar-menu-table {
+                            .menu-create-table {
+                                table {
+                                    width: auto;
+                                    thead { display: none; }
+                                }
+                            }
+                        }
+
+                        &.toolbar-menu-image ul {
+                            min-width: 100px;
+                            padding: 10px 0;
+                        }
+
+                        &.toolbar-menu-alignment ul {
+                            padding: 0;
+
+                            .menu-item {
+                                padding: 0;
+                                span:before { line-height: 40px; }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .simditor-body,
+        .simditor-placeholder {
+            padding: 6px 10px;
+            font: 300 16px/1.5 'Open Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+
+        .simditor-body {
+            overflow: auto;
+            h1, h2, h3, h4, h5 {
+                margin: 0 0 1em 0;
+                font-weight: @font-weight-bold;
+            }
+
+            h1 { font-size: 24px; }
+            h2 { font-size: 22px; }
+            h3 { font-size: @font-size-xxl; }
+            h4 { font-size: @font-size-xl; }
+            h5 { font-size: @font-size-l; }
+            p { margin-bottom: 1em; }
+            a { color: @blue !important; }
+            ol, ul { line-height: 1.5; }
+
+            blockquote {
+                padding: 10px 15px;
+                margin: 0 20px 1em;
+                border-width: 5px;
+                background: #f8f8f8;
+                font-size: 14px;
+                :last-child { margin-bottom: 0; }
+            }
+
+            table {
+                th, td {
+                    min-width: 0;
+                    height: auto;
+                    padding: 4px 8px;
+                }
+            }
+
+            img {
+                max-width: 100%;
+                margin: 0;
+                height: auto;
+            }
+        }
+    }
+
+    .link-popover {
+        .settings-field:last-child { display: none; }
+    }
+}
+
+// 两列时候使用的小按钮版
+.simditor-hack.small .simditor {
+    .simditor-wrapper {
+        .simditor-toolbar {
+            > ul {
+                font-size: 0;
+
+                > li {
+                    > .toolbar-item {
+                        width: 30px;
+                        height: 30px;
+                        line-height: 30px;
+                        font-size: 12px;
+
+                        &.toolbar-item-title span:before {
+                            top: 0;
+                            font-size: 17px !important;
+                        }
+                    }
+
+                    .toolbar-menu {
+                        top: 30px;
+                        &:before { width: 30px; }
+
+                        &.toolbar-menu-alignment ul {
+                            .menu-item {
+                                font-size: @font-size-s;
+                                span:before { line-height: 30px; }
+                            }
+                        }
+                    }
+
+                    > span.separator {
+                        height: 14px;
+                        margin: 8px 10px;
+                        background: #ddd;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ztree */
+.ztree * { font: @font-weight-light @font-size-s/1.5 'Open Sans', 'PingFang SC', '\5FAE\8F6F\96C5\9ED1', sans-serif !important; }
+
+/* jquery ui */
+.ui-datepicker {
+    font-size: @font-size-m !important;
+
+    .ui_tpicker_minute_label,
+    .ui_tpicker_hour_label {
+        position: relative;
+        top: -6px;
+    }
+
+    .ui-datepicker-buttonpane button {
+        color: #004276 !important;
+        font-size: @font-size-m !important;
+        border-radius: 3px;
+        background: #eee !important;
+    }
+    &.ui-widget-content {
+        z-index: 100 !important;
+    }
+}
+
+

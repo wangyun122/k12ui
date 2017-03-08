@@ -1,0 +1,34 @@
+.sprite-sports {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-image: url(../../images/sprite-sports.png);
+    /* Retina display */
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+        background-image: url(../../images/sprite-sports@2x.png);
+        background-size: 879px 123px;
+    }
+
+    &.sprite-1 {
+        .stitches-sprite(0, 0, 130px, 88px);
+    }
+
+    &.sprite-2 {
+        .stitches-sprite(-130px, 0, 154px, 98px);
+    }
+
+    &.sprite-3 {
+        .stitches-sprite(-284px, 0, 130px, 74px);
+    }
+
+    &.sprite-4 {
+        .stitches-sprite(-414px, 0, 111px, 79px);
+    }
+
+    &.sprite-5 {
+        .stitches-sprite(-525px, 0, 48px, 52px);
+    }
+
+    &.sprite-6 {
+        .stitches-sprite(-573px, 0, 306px, 123px);
+    }
+}

@@ -1,0 +1,29 @@
+.k12-col-1, .k12-col-2, .k12-col-3, .k12-col-4, .k12-col-5, .k12-col-6, .k12-col-7, .k12-col-8, .k12-col-9, .k12-col-10, .k12-col-11, .k12-col-12, .k12-col-13, .k12-col-14, .k12-col-15, .k12-col-16, .k12-col-17, .k12-col-18, .k12-col-19, .k12-col-20, .k12-col-21, .k12-col-22, .k12-col-23, .k12-col-24 {
+  float: left;
+  box-sizing: border-box;
+}
+
+.generate-columns(24);
+
+.generate-columns(@n, @i: 1) when (@i =< @n) {
+
+  .k12-col-@{i} {
+    width: calc(@i * 100% / @n );
+  }
+
+  .k12-col-offset-@{i} {
+      margin-left: calc(@i * 100% / @n );
+  }
+
+  .k12-col-pull-@{i} {
+      position: relative;
+      right: calc(@i * 100% / @n );
+  }
+
+  .k12-col-push-@{i} {
+      position: relative;
+      left: calc(@i * 100% / @n );
+  }
+
+  .generate-columns(@n, (@i + 1));
+}

@@ -1,0 +1,87 @@
+/**
+ * @Author 阿辛
+ * @Description 所需变量、通用类，
+ * 此文件中代码不会在最终编译后代码中出现，只能在Less文件中使用，
+ * 不能直接在 HTML 中调用
+ */
+
+@iconfont-path: '/static/web/css/iconfont';
+
+
+@font-weight-light: 300;                //细字体，默认使用
+@font-weight-normal: 400;               //稍粗
+@font-weight-bold: 600;                 //加粗
+
+@font-size-s: 12px;                     //小号
+@font-size-m: 14px;                     //正常，默认使用
+@font-size-l: 16px;                     //大号
+@font-size-xl: 18px;                    //特大号
+@font-size-xxl: 20px;                   //特特大号
+
+/* 颜色 */
+@color-normal-text: #4A4A4A;            //默认文本颜色
+@bg-color-input-disabled: #f0f0f0;      //输入框 disabled 时背景色
+@bg-color-btn-disabled: #ccc;           //按钮 disabled 时背景色
+@color-bb: #efefef;                     //border-bottom 颜色
+@color-input: #dfdfdf;                  //输入框颜色
+@red: #D63E3E;                          //红色
+@red-hover: #B83333;                    //红色悬停
+@blue: #4A90E2;                         //蓝色
+@darkblue: #125688;                     //深蓝
+@green: #81D470;                        //绿色
+@dark: #9B9B9B;                         //深灰
+@gray: #ccc;                            //灰色
+@light-gray: #D8D8D8;                   //淡灰
+@yellow: #F5A623;                       //黄色
+
+/* 等第颜色 */
+@color-level-a: #81D470;                //等第 A
+@color-level-b: #7CB5EC;                //等第 B
+@color-level-c: #F7A35C;                //等第 C
+@color-level-d: #F15C80;                //等第 D
+@color-level-e: #F8E71C;                //等第 E
+@color-level-f: @red;                   //等第 F
+@color-level-z: #B6B6B6;                //已结束、未完成等灰色
+@color-level-green: #3EB897;            //练习未开始颜色
+
+/* 体质 */
+@color-bmi: #ED9D00;                    //身体形态 (BMI)
+@color-enginery: #34A4A9;               //身体机能 (肺活量)
+@color-quality: #E84418;                //身体素质 (50米/仰卧起坐等)
+@color-additional: #77130C;             //加分项目
+
+/* Mixins as Functions */
+.br(@radius: 3px){ border-radius: @radius; }
+.box-shadow(@x: 0; @y: 0; @blur: 3px; @color: #eee){ box-shadow: @arguments; }
+.b1(@color: @color-input) { border: 1px solid @color; }
+.bb1(@color: @color-bb) { border-bottom: 1px solid @color; }
+.wbba() { word-break: break-all; word-wrap: break-word; }
+.trdu(@second: .25s){ transition-duration: @second; }
+.btn-color(@color; @lighten: 6%){
+    background: @color;
+    &:hover { background: lighten(@color, @lighten); }
+}
+.btn-border-color(@color; @txt-color: @color;){
+    border: 1px solid @color;
+    color: @txt-color !important;
+    &:hover {
+        background: @txt-color;
+        border-color: @txt-color;
+        color: #fff !important;
+    }
+}
+.btn-size(@height: 30px; @padding: 15px; @lineheight: 30px; @fontsize: 14px){
+    height: @height;
+    padding: 0 @padding;
+    line-height: @lineheight;
+    font-size: @fontsize;
+}
+
+/* sprite */
+.stitches-sprite(@x: 0, @y: 0, @width: 0, @height: 0) {
+    width: @width;
+    height: @height;
+    background-position: @x @y;
+}
+
+
